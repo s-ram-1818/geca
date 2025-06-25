@@ -13,6 +13,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 let x = [];
+
 const mails = ["shamsarwade1818@gmail.com", "shamsarwade431515@gmail.com"];
 
 async function checkForNewNews() {
@@ -23,7 +24,7 @@ async function checkForNewNews() {
     // Select all news items
 
     const newsItems = [];
-     newsItems.push({ title: "GECA News", link: url });
+    newsItems.push({ title: "GECA News", link: url });
     $("ul.scrollNews li a").each((i, el) => {
       const title = $(el).text().trim();
       const href = $(el).attr("href").trim();
@@ -32,7 +33,6 @@ async function checkForNewNews() {
     });
 
     const oldLinks = new Set(x.map((item) => item.link));
-    
 
     const newNews = newsItems.filter((item) => !oldLinks.has(item.link));
 
