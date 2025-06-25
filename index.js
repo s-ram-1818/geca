@@ -24,7 +24,7 @@ async function checkForNewNews() {
     // Select all news items
 
     const newsItems = [];
-    newsItems.push({ title: "GECA News", link: url });
+    
     $("ul.scrollNews li a").each((i, el) => {
       const title = $(el).text().trim();
       const href = $(el).attr("href").trim();
